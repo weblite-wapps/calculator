@@ -1,0 +1,13 @@
+{
+    "name": "calculator",
+    "id": "5c64764ceb9d944ef8d701fe",
+    "searchable": true,
+    "instancable": false,
+    "inline": false,
+    "creator": false,
+    "userInfo": false,
+    "servIndexes": {
+      "main": "index"
+    }
+  }
+  

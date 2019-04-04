@@ -1,14 +1,128 @@
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+}
+html,
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  box-sizing: border-box;
 }
+
+.App {
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #282c34;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.calc-container {
+  width: 300px;
+  height: 450px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: inset 0 -2px 4px #cecece, inset 0 1px 15px #000;
+  background: linear-gradient(162deg, #e6e5e5 0%, #d2d2d2 43%);
+}
+.calc-container .header-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0.7rem 0.7rem 0.2rem 0;
+}
+.calc-container .header-wrapper .calc-name {
+  text-transform: uppercase;
+  padding-left: 0.7rem;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.calc-container .header-wrapper .solar {
+  background: #a6c396;
+  width: 50px;
+  height: 20px;
+  margin-left: auto;
+  box-shadow: inset 0 -2px 4px #cecece, inset 0 1px 15px #000;
+  display: flex;
+  border-radius: 3px;
+}
+.calc-container .header-wrapper .solar span {
+  margin-left: auto;
+  width: 1.7px;
+  height: inherit;
+  background: linear-gradient(327deg, rgba(180, 204, 166, 0.4) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+.calc-container .display-wrapper {
+  background: #b4cca6;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin: 0.7rem 0;
+  text-align: right;
+  box-shadow: inset 0 -2px 4px #cecece, inset 0 1px 15px #000;
+  font-family: "Digital";
+  font-size: 1.5rem;
+  overflow: hidden;
+  font-weight: bold;
+  height: 66.8px;
+}
+.calc-container .display-wrapper .display {
+  opacity: 0.8;
+}
+.calc-container .display-wrapper .formula {
+  font-size: 1rem;
+  opacity: 0.5;
+  height: 26.4px;
+}
+.calc-container h3 {
+  margin: 0.7rem 0;
+}
+
+.buttons-wrapper {
+  padding-top: 1rem;
+  display: grid;
+  grid-template-areas: "ac ac divide multiply" "seven eight nine minus" "four five six plus" "one two three equals" "zero zero decimal equals";
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.buttons-wrapper .buttons {
+  color: white;
+  border-radius: 7px;
+  padding: 0.7rem 1rem;
+  border: none;
+  box-shadow: inset 0 -2px 4px #cecece, inset 0 1px 15px #000;
+  background: linear-gradient(162deg, #3c3c3c 10%, #000 68%, #000 100%);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.buttons-wrapper .buttons:focus {
+  outline: none;
+}
+.buttons-wrapper .buttons:hover {
+  transform: scale(0.97);
+}
+.buttons-wrapper #clear {
+  grid-area: ac;
+  background: linear-gradient(162deg, #866c8a 20%, #655168 68%, #655168 100%);
+  box-shadow: inset -1px -2px 4px #3b303d, inset 1px 2px 4px #a590a9;
+}
+.buttons-wrapper #equals {
+  grid-area: equals;
+}
+.buttons-wrapper #zero {
+  grid-area: zero;
+}
+.buttons-wrapper .nbr {
+  background: linear-gradient(162deg, #3f3b3f 20%, #1f1d1f 68%, #1f1d1f 100%);
+  box-shadow: inset -1px -2px 4px black, inset 1px 2px 4px #615b61;
+}
+
