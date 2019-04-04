@@ -26,6 +26,7 @@ class App extends React.Component {
 
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown)
+    window.W && window.W.start()
   }
 
   componentWillUnmount() {
@@ -53,17 +54,17 @@ class App extends React.Component {
         evaluated: false
       })
     } else if (
-      (val || e.target.value) === 0 &&
-      curVal === 0 &&
-      formula === ""
+      (val || e.target.value) == 0 &&
+      curVal == 0 &&
+      formula == ""
     ) {
       this.setState({
         formula: 0
       })
     } else if (
       //if initial val was 0 but i want another digit to start my formula before clicking operator
-      curVal === 0 &&
-      formula === 0
+      curVal == 0 &&
+      formula == 0
     ) {
       this.setState({
         curVal: /(0[.0-9].*)$/.test(curVal)
@@ -76,11 +77,11 @@ class App extends React.Component {
     } else {
       this.setState({
         curVal:
-          curVal === "0" || isOperator.test(curVal)
+          curVal == "0" || isOperator.test(curVal)
             ? val || e.target.value
             : curVal + (val || e.target.value),
         formula:
-          curVal === "0" && (val || e.target.value) === "0"
+          curVal == "0" && (val || e.target.value) == "0"
             ? formula
             : /([^.0-9]0)$/.test(formula)
             ? formula.slice(0, -1) + (val || e.target.value)
@@ -112,7 +113,6 @@ class App extends React.Component {
       key = "="
       e.preventDefault()
       this.handleEquals()
-      console.log(key)
     }
   }
 
@@ -186,7 +186,7 @@ class App extends React.Component {
         <div className="calc-container">
           <div className="header-wrapper">
             {" "}
-            <div className="calc-name">Reactsio</div>
+            <div className="calc-name">Calculite</div>
             <div className="solar">
               <span />
               <span />
@@ -215,6 +215,5 @@ class App extends React.Component {
     )
   }
 }
-
 
 export default App

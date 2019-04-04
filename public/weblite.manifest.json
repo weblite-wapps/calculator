@@ -1,7 +1,7 @@
 {
   "name": "calculator",
   "id": "5ca5c0cd831664340ac1fcdb",
-  "instantiable": true,
+  "instantiable": false,
   "creator": false,
   "userInfo": false,
   "fullscreen": false,
